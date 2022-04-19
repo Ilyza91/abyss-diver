@@ -332,7 +332,7 @@ Do you want to check on the Mirage Vault and see if it's open?
 <<return>>
 
 <<nobr>>
-	<<if $corruption >= 0>>
+<<if $corruption >= 0>>
 	[[Choose to stay on the fifth layer|Habitation Ending]]
 	<<else>>
 	You must have a corruption value of 0 or greater to choose a habitation option.
@@ -415,31 +415,30 @@ As predicted, the water is pure and you can drink it without side effects!
 
 :: Layer5 Booby [layer5]
 <<if ($booby == 1 && $booby1 < 3) || ($booby == 2 && $booby2 < 3) || ($booby == 3 && $booby3 < 3)>>
-You have triggered a booby trap while trying to pick up the relic!
-<<if $booby == 1>><<set $booby1 += 1>>
-After springing the trigger, a boulder comes rolling down the hallway after you!
-<<elseif $booby == 2>><<set $booby2 += 1>>
-After springing the trigger, a barrage of arrows flies out the walls towards you!
-<<elseif $booby == 3>><<set $booby3 += 1>>
-After springing the trigger, a trapdoor opens beneath where you are standing, causing you to fall into a pit of scorpions!
-<<endif>>
-If you don't have a way to specifically avoid the trap, you'll be seriously injured, increasing all travel times by 3 days until you use a medkit. However, if you have any status condition, the trap will be fatal!
+	You have triggered a booby trap while trying to pick up the relic!
+	<<if $booby == 1>><<set $booby1 += 1>>
+		After springing the trigger, a boulder comes rolling down the hallway after you!
+	<<elseif $booby == 2>><<set $booby2 += 1>>
+		After springing the trigger, a barrage of arrows flies out the walls towards you!
+	<<elseif $booby == 3>><<set $booby3 += 1>>
+		After springing the trigger, a trapdoor opens beneath where you are standing, causing you to fall into a pit of scorpions!
+	<<endif>>
+	If you don't have a way to specifically avoid the trap, you'll be seriously injured, increasing all travel times by 3 days until you use a medkit. However, if you have any status condition, the trap will be fatal!
 
-<<if $status.duration > 0>>
-The trap would kill you due to your status condition, please go back and choose another option or end your journey here.
+	<<if $status.duration > 0>>
+		The trap would kill you due to your status condition, please go back and choose another option or end your journey here.
 
-<<back>>
+		<<back>>
 
-<<else>><<if $ownedRelics.some(e => e.name === "Forest's Gift") && $booby == 3>>
-Fortunately for you, the scorpions in the pit are merely mundane scorpions, rather than an Abyss-twisted analogue of them. And because of your Relic the Forest's Gift, the scorpions are actually friendly towards you, rather than upset that you invaded the pit they live in. A brief conversation explaining what happened to them leads to them pointing you towards a safe exit, allowing easy and safe escape from the pit.<br>
-[[Escape with the Forest's Gift|Layer5 Booby2]]<br><br>
-<<endif>>
-[[Accept the injuries and pick up the relic|Layer5 Booby2][$status.duration += 99, $status.penalty += 3]]
+	<<else>><< if $ownedRelics.some(e => e.name === "Forest's Gift") && $booby == 3>>
+		Fortunately for you, the scorpions in the pit are merely mundane scorpions, rather than an Abyss-twisted analogue of them. And because of your Relic the Forest's Gift, the scorpions are actually friendly towards you, rather than upset that you invaded the pit they live in. A brief conversation explaining what happened to them leads to them pointing you towards a safe exit, allowing easy and safe escape from the pit.<br>
+		[[Escape with the Forest's Gift|Layer5 Booby2]]<br><br>
+	<<endif>>
+	[[Accept the injuries and pick up the relic|Layer5 Booby2][$status.duration += 99, $status.penalty += 3]]
 
-Use the following option only if you have specifically considered your inventory and made a plan of how to use what you have to evade the trap.
-[[Use a combination of relics not mentioned above you believe would be able to overpower the trap|Layer5 Booby2]]
+	Use the following option only if you have specifically considered your inventory and made a plan of how to use what you have to evade the trap.
+	[[Use a combination of relics not mentioned above you believe would be able to overpower the trap|Layer5 Booby2]]
 
-<<endif>>
 <<endif>>
 
 

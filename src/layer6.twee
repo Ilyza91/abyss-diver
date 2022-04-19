@@ -244,7 +244,7 @@ Do you want to approach the Maw of Kimaris to get a copy of a relic from a highe
 <<return>>
 
 <<nobr>>
-	<<if $corruption >= 0>>
+<<if $corruption >= 0>>
 	[[Choose to stay on the sixth layer|Habitation Ending]]
 	<<else>>
 	You must have a corruption value of 0 or greater to choose a habitation option.
@@ -313,8 +313,8 @@ As the enormous tentacle beast approaches, you must quickly decide on a course o
 	[[Shoot it with your pistol|Layer6 Hub][$items[20].count -= (19 - $bullRed)]]<br><br>
 <<endif>>
 <<if $slingshot == 1>>
-Your Brave Vector slingshot can be used like a gun, but it will take many shots to bring down the amorphous creature. Luckily ranged combat doesn't pose as much of a risk as melee against a great beast such as this one.<br>
-[[Defeat it with the Brave Vector|Layer6 Hub]]<br><br>
+	Your Brave Vector slingshot can be used like a gun, but it will take many shots to bring down the amorphous creature. Luckily ranged combat doesn't pose as much of a risk as melee against a great beast such as this one.<br>
+	[[Defeat it with the Brave Vector|Layer6 Hub]]<br><br>
 <<endif>>
 <<if $items[14].count > 0>>
 Relying on your own swordplay will allow you to put up a minimum amount of resistance and tire it out a bit, leaving incapacitated for 10 days straight.<br>
@@ -466,7 +466,6 @@ You have successfully taken the $relic63.name relic. Hopefully you can make good
 <<set $tempTime = $relic64.time-$SibylBuff>>
 <<include "Layer6Time">>
 <</nobr>>
-<</nobr>>
 
 You have successfully taken the $relic64.name relic. Hopefully you can make good use of it and make it worth that corruption cost.
 
@@ -480,7 +479,6 @@ You have successfully taken the $relic64.name relic. Hopefully you can make good
 <<set $corruption -= ($relic65.corr - $corRed + (5 * Math.trunc($hexflame / 10)))>>
 <<set $tempTime = $relic65.time-$SibylBuff>>
 <<include "Layer6Time">>
-<</nobr>>
 <</nobr>>
 
 You have successfully taken the $relic65.name relic. Hopefully you can make good use of it and make it worth that corruption cost.
@@ -498,7 +496,6 @@ You can use this to improve the boons granted by your companions one time, choos
 <<set $tempTime = $relic66.time-$SibylBuff>>
 <<include "Layer6Time">>
 <</nobr>>
-<</nobr>>
 
 You have successfully taken the $relic66.name relic. Hopefully you can make good use of it and make it worth that corruption cost.
 
@@ -512,7 +509,6 @@ You have successfully taken the $relic66.name relic. Hopefully you can make good
 <<set $corruption -= ($relic67.corr - $corRed + (5 * Math.trunc($hexflame / 10)))>>
 <<set $tempTime = $relic67.time-$SibylBuff>>
 <<include "Layer6Time">>
-<</nobr>>
 <</nobr>>
 
 You have successfully taken the $relic67.name relic. Hopefully you can make good use of it and make it worth that corruption cost.
